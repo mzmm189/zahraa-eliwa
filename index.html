@@ -102,6 +102,7 @@
   .proj.feature{grid-column:1/-1}
   .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 14px}
   .gallery.two{grid-template-columns:repeat(2,1fr)}
+  .gallery figure{margin:0}.gallery figcaption{font-size:12px;color:var(--muted);margin-top:6px;font-weight:500}
   .gallery a{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;background:#fff}
   .gallery img{width:100%;height:190px;object-fit:cover;object-position:top;display:block;transition:transform .2s}
   .gallery a:hover img{transform:scale(1.03)}
@@ -256,15 +257,15 @@
     <h2>Selected work</h2>
     <div class="projects">
       <div class="card proj feature">
-        <span class="tag">Power BI · Featured</span>
-        <h3>Nexus Prime Sales Dashboard</h3>
+        <span class="tag">Power BI · Featured · 2 reports</span>
+        <h3>Nexus Prime Sales Analytics</h3>
         <div class="gallery">
-          <a href="#" data-img="powerbi_dashboard.jpg" title="Overview page"><img src="powerbi_dashboard.jpg" alt="Power BI overview page" loading="lazy"></a>
-          <a href="#" data-img="powerbi_page2.jpg" title="Decomposition tree and waterfall"><img src="powerbi_page2.jpg" alt="Power BI decomposition tree and waterfall page" loading="lazy"></a>
-          <a href="#" data-img="powerbi_page3.jpg" title="Time intelligence page"><img src="powerbi_page3.jpg" alt="Power BI time intelligence page" loading="lazy"></a>
+          <figure><a href="#" data-img="powerbi_dashboard.jpg" title="Executive overview"><img src="powerbi_dashboard.jpg" alt="Power BI executive overview report" loading="lazy"></a><figcaption>Report 1 · Executive overview (1 page)</figcaption></figure>
+          <figure><a href="#" data-img="powerbi_page2.jpg" title="Decomposition tree and waterfall"><img src="powerbi_page2.jpg" alt="Power BI analytical report: decomposition tree and waterfall" loading="lazy"></a><figcaption>Report 2 · Drill-down: decomposition tree &amp; waterfall</figcaption></figure>
+          <figure><a href="#" data-img="powerbi_page3.jpg" title="Time intelligence"><img src="powerbi_page3.jpg" alt="Power BI analytical report: time intelligence" loading="lazy"></a><figcaption>Report 2 · Time intelligence (YTD, PY, SPLY)</figcaption></figure>
         </div>
         <p class="hint-sm">Tap any page to enlarge.</p>
-        <p>3-page interactive report on a multi-table data model with a dedicated date table, DAX time-intelligence measures (YTD, previous year, same period last year), a field parameter, bookmarks, slicers and drill-down visuals (decomposition tree, waterfall).</p>
+        <p>Two Power BI reports built on the same multi-table data model with a dedicated date table: a 1-page executive overview and a 3-page analytical report with DAX time-intelligence measures (YTD, previous year, same period last year), a field parameter, bookmarks, slicers and drill-down visuals (decomposition tree, waterfall).</p>
         <div class="metric"><span>$33.95M sales</span><span>$6.71M profit</span><span>2017 peak · +51% vs 2015</span><span>Top: West · Phones</span></div>
       </div>
       <div class="card proj feature">
