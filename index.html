@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zahraa Mostafa Eliwa — Data Analyst</title>
+<meta name="description" content="Zahraa Mostafa Eliwa — Data Analyst. Power BI, SQL, Python, Excel. CV, LinkedIn, projects and certifications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b1f35; --navy-2:#132e4d; --accent:#0d9488; --accent-2:#14b8a6; --accent-soft:#e7f6f4;
+    --ink:#0f172a; --text:#334155; --muted:#64748b; --line:#e2e8f0; --bg:#f8fafc; --card:#ffffff;
+    --radius:16px; --shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.55}
+  a{color:inherit}
+  .container{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  /* Top bar */
+  .nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line)}
+  .nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+  .brand span{color:var(--accent)}
+  .nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+  .nav ul a{text-decoration:none;font-size:14px;font-weight:500;color:var(--muted)}
+  .nav ul a:hover{color:var(--ink)}
+  @media(max-width:720px){.nav ul{display:none}}
+
+  /* Hero */
+  .hero{background:radial-gradient(1200px 400px at 80% -10%,rgba(20,184,166,.25),transparent 60%),linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;padding:64px 0 72px}
+  .hero .container{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center}
+  .photo{width:150px;height:150px;border-radius:50%;background:#fff;color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:800;border:5px solid rgba(255,255,255,.18);overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+  .photo img{width:100%;height:100%;object-fit:cover}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:#99f6e4;background:rgba(20,184,166,.14);border:1px solid rgba(153,246,228,.25);padding:6px 12px;border-radius:999px}
+  .badge i{width:7px;height:7px;border-radius:50%;background:#2dd4bf;display:inline-block}
+  .hero h1{font-size:40px;line-height:1.1;margin:14px 0 6px;font-weight:800;letter-spacing:-.02em}
+  .hero .title{font-size:19px;color:#cbd5e1;font-weight:500;margin:0}
+  .hero .title b{color:#fff;font-weight:700}
+  .hero .lead{max-width:600px;color:#cbd5e1;font-size:15.5px;margin:16px 0 0}
+  .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;font-weight:600;font-size:14.5px;text-decoration:none;transition:transform .15s,background .15s;border:1px solid transparent}
+  .btn svg{width:18px;height:18px}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.primary:hover{background:var(--accent-2)}
+  .btn.ghost{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.22)}
+  .btn.ghost:hover{background:rgba(255,255,255,.16)}
+  @media(max-width:720px){
+    .hero{padding:44px 0 56px;text-align:center}
+    .hero .container{grid-template-columns:1fr;gap:18px;justify-items:center}
+    .photo{width:120px;height:120px;font-size:40px}
+    .hero h1{font-size:30px}
+    .hero .title{font-size:17px}
+    .cta{justify-content:center}
+    .cta .btn{flex:1 1 100%;justify-content:center}
+  }
+
+  /* Stats */
+  .stats{margin-top:-34px;position:relative;z-index:2}
+  .stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .stat{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .stat .n{font-size:24px;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+  .stat .l{font-size:13px;color:var(--muted);margin-top:2px}
+  @media(max-width:720px){.stats .grid{grid-template-columns:repeat(2,1fr)}.stat .n{font-size:20px}}
+
+  /* Sections */
+  section.block{padding:56px 0 8px}
+  .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  h2{font-size:26px;color:var(--ink);margin:6px 0 20px;letter-spacing:-.02em}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+  .about p{margin:0;font-size:16px}
+
+  /* Skills */
+  .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .skills h3{font-size:15px;margin:0 0 12px;color:var(--ink)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:13px;font-weight:500;padding:6px 11px;border-radius:8px;background:var(--bg);border:1px solid var(--line);color:var(--ink)}
+  .chip.k{background:var(--accent-soft);border-color:#b8e6e0;color:#0f766e;font-weight:600}
+  @media(max-width:720px){.skills{grid-template-columns:1fr}}
+
+  /* Experience */
+  .xp{display:grid;gap:14px}
+  .xp .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .xp h3{margin:0;font-size:17px;color:var(--ink)}
+  .xp .org{font-size:14px;color:var(--muted);font-weight:500}
+  .xp .date{font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:4px 10px;border-radius:999px;white-space:nowrap;height:fit-content}
+  .xp ul{margin:12px 0 0;padding-left:18px}
+  .xp li{margin-bottom:4px}
+
+  /* Projects */
+  .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .proj{display:flex;flex-direction:column}
+  .proj .tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .proj h3{margin:6px 0 8px;font-size:17px;color:var(--ink);line-height:1.3}
+  .proj p{margin:0 0 14px;font-size:14.5px}
+  .metric{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+  .metric span{font-size:13px;font-weight:700;color:var(--navy);background:#eef2f7;padding:6px 10px;border-radius:8px}
+  .proj.feature{grid-column:1/-1}
+  .proj .thumb{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--line);margin:4px 0 14px;cursor:zoom-in}
+  .proj .thumb img{width:100%;display:block}
+  .proj .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .btn.light{background:var(--bg);color:var(--ink);border-color:var(--line)}
+  .btn.light:hover{background:#eef2f7}
+  @media(max-width:720px){.projects{grid-template-columns:1fr}}
+
+  /* Certifications */
+  .certs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .cert{display:flex;gap:14px;align-items:flex-start}
+  .cert .ic{flex:0 0 42px;height:42px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center}
+  .cert .ic svg{width:22px;height:22px}
+  .cert h3{margin:0;font-size:15px;color:var(--ink);line-height:1.35}
+  .cert p{margin:3px 0 0;font-size:13px;color:var(--muted)}
+  @media(max-width:720px){.certs{grid-template-columns:1fr}}
+
+  /* Education */
+  .edu{display:grid;gap:10px}
+  .edu .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .edu h3{margin:0;font-size:15.5px;color:var(--ink)}
+  .edu p{margin:2px 0 0;font-size:14px;color:var(--muted)}
+  .edu .d{font-size:13px;color:var(--muted);white-space:nowrap}
+
+  /* Contact */
+  .contact{margin:56px 0 0;background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;padding:48px 0}
+  .contact h2{color:#fff}
+  .contact .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .contact .item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px;text-decoration:none;display:block}
+  .contact .item .l{font-size:12.5px;color:#94a3b8;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+  .contact .item .v{font-size:15px;font-weight:600;margin-top:4px;word-break:break-word}
+  @media(max-width:720px){.contact .grid{grid-template-columns:1fr}}
+  footer{background:var(--navy);color:#64748b;text-align:center;font-size:12.5px;padding:0 0 28px}
+
+  /* Lightbox */
+  .lb{position:fixed;inset:0;background:rgba(2,6,23,.92);display:none;z-index:50;overflow:auto;-webkit-overflow-scrolling:touch}
+  .lb.open{display:block}
+  .lb img{display:block;width:100%;max-width:1600px;margin:56px auto 24px}
+  @media(max-width:720px){.lb img{width:240%;max-width:none;margin-top:60px}}
+  .lb .x{position:fixed;top:12px;right:12px;background:#fff;color:var(--ink);border:0;border-radius:999px;padding:10px 16px;font-weight:700;font-family:inherit;font-size:14px;cursor:pointer}
+  .lb .hint{position:fixed;top:18px;left:16px;color:#cbd5e1;font-size:13px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <a class="brand" href="#top">Zahraa <span>Eliwa</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container">
+    <div class="photo"><img src="photo.jpg" alt="Zahraa Mostafa Eliwa" onerror="this.parentNode.textContent='ZE'"></div>
+    <div>
+      <span class="badge"><i></i>Open to Data Analyst opportunities</span>
+      <h1>Zahraa Mostafa Eliwa</h1>
+      <p class="title"><b>Data Analyst</b> · Power BI · SQL · Python · Excel</p>
+      <p class="lead">Specialized Diploma trainee at the Digilians initiative, turning raw data into dashboards and KPI reports that support business decisions.</p>
+      <div class="cta">
+        <a class="btn primary" href="Zahraa_Mostafa_Eliwa_CV.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6M9 15l3 3 3-3"/></svg>
+          View / Download CV
+        </a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/zahraa-eliwa-data-analyst" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.6 8.65 22 11.2 22 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21h-4z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn ghost" href="#projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>
+          Infographic &amp; Projects
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="block" id="about">
+    <div class="eyebrow">About</div>
+    <h2>Data analyst with a scientist's eye for accuracy</h2>
+    <div class="card about">
+      <p>Data Analyst with hands-on experience in SQL, Python, Excel and Power BI, built through a 9-month Specialized Diploma (Digilians initiative) and hands-on projects. I deliver actionable business insights through dashboards and KPI reports, and my analytical chemistry background brings scientific rigor to data quality.</p>
+    </div>
+  </section>
+
+  <section class="block" id="skills">
+    <div class="eyebrow">Skills</div>
+    <h2>What I work with</h2>
+    <div class="skills">
+      <div class="card">
+        <h3>Visualization &amp; Reporting</h3>
+        <div class="chips"><span class="chip k">Power BI</span><span class="chip k">DAX</span><span class="chip k">Power Query</span><span class="chip">Data Modeling</span><span class="chip">Dashboards</span><span class="chip">KPI Reporting</span><span class="chip">Data Visualization</span><span class="chip">Data Storytelling</span></div>
+      </div>
+      <div class="card">
+        <h3>Programming &amp; Data</h3>
+        <div class="chips"><span class="chip k">SQL</span><span class="chip k">Python</span><span class="chip k">Excel</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span><span class="chip">Pivot Tables</span></div>
+      </div>
+      <div class="card">
+        <h3>Data Processing &amp; Cloud</h3>
+        <div class="chips"><span class="chip">Data Cleaning</span><span class="chip">Data Wrangling</span><span class="chip">Data Quality</span><span class="chip">ETL</span><span class="chip">EDA</span><span class="chip">Statistical Analysis</span><span class="chip">Microsoft Azure</span></div>
+      </div>
+      <div class="card">
+        <h3>Machine Learning &amp; AI (project skills)</h3>
+        <div class="chips"><span class="chip">Machine Learning</span><span class="chip">Deep Learning</span><span class="chip">scikit-learn</span><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">PyTorch</span><span class="chip">Computer Vision</span><span class="chip">NLP</span><span class="chip">RAG</span><span class="chip">LLMs</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="eyebrow">Experience</div>
+    <h2>Training &amp; hands-on work</h2>
+    <div class="xp">
+      <div class="card">
+        <div class="row"><div><h3>Data Analyst Trainee — Specialized Diploma</h3><div class="org">Digilians Initiative · Cairo, Egypt</div></div><span class="date">Dec 2025 – Present</span></div>
+        <ul>
+          <li>Completing a 9-month data analysis program covering SQL, Python, Excel, Power BI and business reporting.</li>
+          <li>Led a team data project from data cleaning to delivery of a sales dashboard covering 120,000+ monthly orders, uncovering insights that cut waste by EGP 6,000.</li>
+          <li>Translated complex metrics into clear recommendations for non-technical stakeholders.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="row"><div><h3>AI Trainee — RAG Developer (Books)</h3><div class="org">Sadat Academy · Smart Digital Library &amp; Paperless Academy (Digilians)</div></div><span class="date">Nov 2026 – Present</span></div>
+        <ul>
+          <li>Processed and indexed the library catalogue dataset to power natural-language Q&amp;A and book recommendations (RAG).</li>
+          <li>Implemented hybrid retrieval (BM25 + semantic embeddings) with LLM-generated, source-linked answers.</li>
+          <li>Collaborated with a 5-person team to integrate the system into a full-stack library platform.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="projects">
+    <div class="eyebrow">Projects</div>
+    <h2>Selected work</h2>
+    <div class="projects">
+      <div class="card proj feature">
+        <span class="tag">Deep Learning · Graduation Project</span>
+        <h3>MindSync: Multimodal Depression Detection</h3>
+        <a class="thumb" href="#" id="openInfo" title="Open infographic"><img src="infographic.jpg" alt="MindSync project infographic" loading="lazy"></a>
+        <p>Combined audio (CNN + BiLSTM on MFCCs) and video (pretrained R3D-18) sub-networks through a fusion MLP to support automated depression screening.</p>
+        <div class="metric"><span>96.74% fusion accuracy</span><span>PyTorch</span><span>RAVDESS · 8 emotions</span></div>
+        <div class="links">
+          <a class="btn light" href="#" id="openInfo2">View infographic</a>
+          <a class="btn light" href="MindSync_Infographic.pdf" target="_blank" rel="noopener">Infographic (PDF)</a>
+        </div>
+      </div>
+      <div class="card proj">
+        <span class="tag">Data Analysis · Dashboard</span>
+        <h3>Pizza Sales Analysis Dashboard</h3>
+        <p>Sales dashboard tracking daily profit, waste and returns; identified top sellers and size-demand patterns.</p>
+        <div class="metric"><span>120K+ orders/month</span><span>−EGP 6,000 waste</span><span>EGP 22,000 avg daily profit</span></div>
+      </div>
+      <div class="card proj">
+        <span class="tag">Computer Vision</span>
+        <h3>Chest X-Ray Pneumonia Detection</h3>
+        <p>Five controlled experiments comparing a scratch CNN with DenseNet121 transfer learning on 5,856 radiographs, with Grad-CAM auditing.</p>
+        <div class="metric"><span>0.966 accuracy</span><span>0.958 ROC-AUC</span><span>0.985 sensitivity</span></div>
+      </div>
+      <div class="card proj">
+        <span class="tag">Computer Vision · Team of 5</span>
+        <h3>Poultry Disease Classification</h3>
+        <p>Benchmarked custom CNNs against MobileNetV2 on 8,067 fecal images, handling severe class imbalance.</p>
+        <div class="metric"><span>95.00% F1-score</span><span>92.12% precision</span></div>
+      </div>
+      <div class="card proj">
+        <span class="tag">LLMs · Team of 5</span>
+        <h3>Books RAG System — Sadat Academy</h3>
+        <p>Hybrid retrieval (BM25 + embeddings) with source-linked LLM answers over the academy library catalogue.</p>
+        <div class="metric"><span>Hybrid retrieval</span><span>Full-stack integration</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="certifications">
+    <div class="eyebrow">Certifications</div>
+    <h2>Verified credentials</h2>
+    <div class="certs">
+      <div class="card cert"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg></div><div><h3>Microsoft Certified: Power BI Data Analyst Associate (PL-300)</h3><p>Microsoft · Jul 2026 · ID 7461C2A1412B772</p></div></div>
+      <div class="card cert"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg></div><div><h3>Microsoft Certified: Azure Data Fundamentals (DP-900)</h3><p>Microsoft · Nov 2026 · ID ACF8A367C4FFFEC0</p></div></div>
+      <div class="card cert"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg></div><div><h3>Google Data Analytics Professional Certificate</h3><p>Google · Coursera · 2026</p></div></div>
+      <div class="card cert"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg></div><div><h3>Microsoft Power BI Data Analyst Professional Certificate</h3><p>Microsoft · Coursera</p></div></div>
+      <div class="card cert"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg></div><div><h3>Microsoft AI Agents: From Foundations to Applications</h3><p>Microsoft · Coursera</p></div></div>
+      <div class="card cert"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg></div><div><h3>IBM: Machine Learning with Python · Deep Learning with Keras &amp; TensorFlow</h3><p>IBM · Coursera</p></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="education">
+    <div class="eyebrow">Education</div>
+    <h2>Academic background</h2>
+    <div class="card edu">
+      <div class="row"><div><h3>Diploma in Toxicology &amp; Forensic Chemistry</h3><p>Faculty of Medicine, Menoufia University</p></div><span class="d">Dec 2019 – Dec 2020</span></div>
+      <div class="row"><div><h3>Diploma in Analytical Biochemistry</h3><p>Faculty of Science, Menoufia University</p></div><span class="d">Jul 2018</span></div>
+      <div class="row"><div><h3>B.Sc. in Chemistry &amp; Microbiology</h3><p>Faculty of Science, Menoufia University</p></div><span class="d">Sep 2013 – Jul 2017</span></div>
+    </div>
+  </section>
+
+</main>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="eyebrow" style="color:#5eead4">Contact</div>
+    <h2>Let's talk</h2>
+    <div class="grid">
+      <a class="item" href="mailto:mzmm189@gmail.com"><div class="l">Email</div><div class="v">mzmm189@gmail.com</div></a>
+      <a class="item" href="tel:+201016443992"><div class="l">Phone</div><div class="v">+20 101 644 3992</div></a>
+      <a class="item" href="https://www.linkedin.com/in/zahraa-eliwa-data-analyst" target="_blank" rel="noopener"><div class="l">LinkedIn</div><div class="v">zahraa-eliwa-data-analyst</div></a>
+    </div>
+  </div>
+</section>
+<footer>© 2026 Zahraa Mostafa Eliwa · Cairo, Egypt · <a href="https://github.com/mzmm189" style="color:#94a3b8">GitHub</a></footer>
+
+<div class="lb" id="lb" role="dialog" aria-label="Infographic">
+  <span class="hint">Pinch or scroll to explore</span>
+  <button class="x" id="lbClose">Close ✕</button>
+  <img src="infographic.jpg" alt="MindSync project infographic">
+</div>
+
+<script>
+  var lb=document.getElementById('lb');
+  function openLb(e){e.preventDefault();lb.classList.add('open');document.body.style.overflow='hidden';}
+  function closeLb(){lb.classList.remove('open');document.body.style.overflow='';}
+  ['openInfo','openInfo2'].forEach(function(id){document.getElementById(id).addEventListener('click',openLb);});
+  document.getElementById('lbClose').addEventListener('click',closeLb);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();});
+</script>
+</body>
+</html>
