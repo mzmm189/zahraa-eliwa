@@ -100,6 +100,13 @@
   .metric{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
   .metric span{font-size:13px;font-weight:700;color:var(--navy);background:#eef2f7;padding:6px 10px;border-radius:8px}
   .proj.feature{grid-column:1/-1}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 14px}
+  .gallery.two{grid-template-columns:repeat(2,1fr)}
+  .gallery a{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;background:#fff}
+  .gallery img{width:100%;height:190px;object-fit:cover;object-position:top;display:block;transition:transform .2s}
+  .gallery a:hover img{transform:scale(1.03)}
+  .hint-sm{font-size:12.5px;color:var(--muted);margin:-6px 0 12px}
+  @media(max-width:720px){.gallery,.gallery.two{grid-template-columns:1fr}.gallery img{height:auto}}
   .proj .thumb{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--line);margin:4px 0 14px;cursor:zoom-in}
   .proj .thumb img{width:100%;display:block}
   .proj .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
@@ -194,7 +201,7 @@
     <div class="eyebrow">About</div>
     <h2>Data analyst with a scientist's eye for accuracy</h2>
     <div class="card about">
-      <p>Data Analyst with hands-on experience in SQL, Python, Excel and Power BI, built through a 9-month Specialized Diploma (Digilians initiative) and hands-on projects. I deliver actionable business insights through dashboards and KPI reports, and my analytical chemistry background brings scientific rigor to data quality.</p>
+      <p>Data Analyst with hands-on experience in SQL, Python, Excel and Power BI, built through a 1-year Specialized Diploma (Digilians initiative) and hands-on projects. I deliver actionable business insights through dashboards and KPI reports, and my analytical chemistry background brings scientific rigor to data quality.</p>
     </div>
   </section>
 
@@ -228,8 +235,8 @@
       <div class="card">
         <div class="row"><div><h3>Data Analyst — Specialized Diploma Program</h3><div class="org">Digilians Initiative · Cairo, Egypt</div></div><span class="date">Dec 2025 – Present</span></div>
         <ul>
-          <li>Completing a 9-month data analysis program covering SQL, Python, Excel, Power BI and business reporting.</li>
-          <li>Led a team data project from data cleaning to delivery of a sales dashboard covering 120,000+ monthly orders, uncovering insights that cut waste by EGP 6,000.</li>
+          <li>Completing a 1-year data analysis program covering SQL, Python, Excel, Power BI and business reporting.</li>
+          <li>Led a team data project from data cleaning to delivery of a sales dashboard covering 21,350 orders and $817.9K in revenue.</li>
           <li>Translated complex metrics into clear recommendations for non-technical stakeholders.</li>
         </ul>
       </div>
@@ -249,21 +256,55 @@
     <h2>Selected work</h2>
     <div class="projects">
       <div class="card proj feature">
+        <span class="tag">Power BI · Featured</span>
+        <h3>Nexus Prime Sales Dashboard</h3>
+        <div class="gallery">
+          <a href="#" data-img="powerbi_dashboard.jpg" title="Overview page"><img src="powerbi_dashboard.jpg" alt="Power BI overview page" loading="lazy"></a>
+          <a href="#" data-img="powerbi_page2.jpg" title="Decomposition tree and waterfall"><img src="powerbi_page2.jpg" alt="Power BI decomposition tree and waterfall page" loading="lazy"></a>
+          <a href="#" data-img="powerbi_page3.jpg" title="Time intelligence page"><img src="powerbi_page3.jpg" alt="Power BI time intelligence page" loading="lazy"></a>
+        </div>
+        <p class="hint-sm">Tap any page to enlarge.</p>
+        <p>3-page interactive report on a multi-table data model with a dedicated date table, DAX time-intelligence measures (YTD, previous year, same period last year), a field parameter, bookmarks, slicers and drill-down visuals (decomposition tree, waterfall).</p>
+        <div class="metric"><span>$33.95M sales</span><span>$6.71M profit</span><span>2017 peak · +51% vs 2015</span><span>Top: West · Phones</span></div>
+      </div>
+      <div class="card proj feature">
+        <span class="tag">Excel · Data Model · DAX</span>
+        <h3>European Superstore Sales Dashboard</h3>
+        <div class="gallery two">
+          <a href="#" data-img="excel_europe_dash1.jpg" title="Sales and profit by country, month and year"><img src="excel_europe_dash1.jpg" alt="European Superstore dashboard: country, month and year" loading="lazy"></a>
+          <a href="#" data-img="excel_europe_dash3.jpg" title="Segment, ship mode and top customers"><img src="excel_europe_dash3.jpg" alt="European Superstore dashboard: segment, ship mode and top customers" loading="lazy"></a>
+        </div>
+        <p>3 dashboards with 23 pivot tables and 5 slicers across 15 European countries (2011–2014); revealed 6 loss-making countries, led by the Netherlands.</p>
+        <div class="metric"><span>4,117 orders</span><span>15 countries</span><span>2.6% margin</span><span>6 loss-making countries</span></div>
+      </div>
+      <div class="card proj">
+        <span class="tag">Excel · Data Model · Team project</span>
+        <h3>Pizza Sales Analysis Dashboard</h3>
+        <p>4-table data model (orders, order details, pizzas, pizza types) analyzing 2022 sales by size, category, month and price; identified top and bottom sellers.</p>
+        <div class="metric"><span>21,350 orders</span><span>$817.9K revenue</span><span>Large = 45.9% of revenue</span><span>Peak: July · 12–1 PM</span></div>
+      </div>
+      <div class="card proj">
+        <span class="tag">Excel · Formulas · HR</span>
+        <h3>HR Employee Dashboard</h3>
+        <p>Cleaned 300 employee records (PROPER, TRIM) and calculated experience, tax, bonus and net salary (DATEDIF, IF, VLOOKUP), with conditional formatting and a 4-slicer dashboard.</p>
+        <div class="metric"><span>300 employees</span><span>10 pivot tables</span><span>4 slicers</span></div>
+      </div>
+      <div class="card proj">
+        <span class="tag">Excel · Pivot Charts · Map</span>
+        <h3>US Superstore Sales Dashboard</h3>
+        <p>Monthly sales and order trends, ship-mode mix, category-by-region comparison and a sales map by state; West and Technology led performance.</p>
+        <div class="metric"><span>1,020 orders</span><span>$248.6K sales</span><span>$18.7K profit</span></div>
+      </div>
+      <div class="card proj feature">
         <span class="tag">Deep Learning · Graduation Project</span>
         <h3>MindSync: Multimodal Depression Detection</h3>
-        <a class="thumb" href="#" id="openInfo" title="Open infographic"><img src="infographic.jpg" alt="MindSync project infographic" loading="lazy"></a>
+        <a class="thumb" href="#" id="openInfo" data-img="infographic.jpg" title="Open infographic"><img src="infographic.jpg" alt="MindSync project infographic" loading="lazy"></a>
         <p>Combined audio (CNN + BiLSTM on MFCCs) and video (pretrained R3D-18) sub-networks through a fusion MLP to support automated depression screening.</p>
         <div class="metric"><span>96.74% fusion accuracy</span><span>PyTorch</span><span>RAVDESS · 8 emotions</span></div>
         <div class="links">
-          <a class="btn light" href="#" id="openInfo2">View infographic</a>
+          <a class="btn light" href="#" id="openInfo2" data-img="infographic.jpg">View infographic</a>
           <a class="btn light" href="MindSync_Infographic.pdf" target="_blank" rel="noopener">Infographic (PDF)</a>
         </div>
-      </div>
-      <div class="card proj">
-        <span class="tag">Data Analysis · Dashboard</span>
-        <h3>Pizza Sales Analysis Dashboard</h3>
-        <p>Sales dashboard tracking daily profit, waste and returns; identified top sellers and size-demand patterns.</p>
-        <div class="metric"><span>120K+ orders/month</span><span>−EGP 6,000 waste</span><span>EGP 22,000 avg daily profit</span></div>
       </div>
       <div class="card proj">
         <span class="tag">Computer Vision</span>
@@ -327,14 +368,14 @@
 <div class="lb" id="lb" role="dialog" aria-label="Infographic">
   <span class="hint">Pinch or scroll to explore</span>
   <button class="x" id="lbClose">Close ✕</button>
-  <img src="infographic.jpg" alt="MindSync project infographic">
+  <img id="lbImg" src="infographic.jpg" alt="Project image">
 </div>
 
 <script>
-  var lb=document.getElementById('lb');
-  function openLb(e){e.preventDefault();lb.classList.add('open');document.body.style.overflow='hidden';}
+  var lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg');
+  function openLb(e){e.preventDefault();lbImg.src=this.getAttribute('data-img');lb.classList.add('open');document.body.style.overflow='hidden';}
   function closeLb(){lb.classList.remove('open');document.body.style.overflow='';}
-  ['openInfo','openInfo2'].forEach(function(id){document.getElementById(id).addEventListener('click',openLb);});
+  document.querySelectorAll('[data-img]').forEach(function(el){el.addEventListener('click',openLb);});
   document.getElementById('lbClose').addEventListener('click',closeLb);
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();});
 </script>
